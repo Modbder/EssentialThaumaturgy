@@ -19,7 +19,7 @@ import essentialThaumaturgy.common.utils.ETUtils;
 import essentialThaumaturgy.common.utils.cfg.ETCfg;
 import essentialThaumaturgy.common.utils.proxy.CommonProxy;
 
-@Mod(modid = "essenthaum",name = "Essential Thaumaturgy",version = "1.0.1710.0",dependencies = "required-after:Baubles@[1.0.1.8,);after:EssentialCraft@[4.2.1710.36,);after:Thaumcraft@[4.2.1.4,)")
+@Mod(modid = "essenthaum",name = "Essential Thaumaturgy",version = "1.0.1710.0",dependencies = "required-after:Baubles@[1.0.1.10,);after:EssentialCraft@[4.3.1710.112,);after:Thaumcraft@[4.2.2.0,)")
 public class EssentialThaumaturgy {
 	
 	public static EssentialThaumaturgy core = null;

@@ -26,6 +26,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.oredict.OreDictionary;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
+import thaumcraft.api.wands.FocusUpgradeType;
 import thaumcraft.api.wands.ItemFocusBasic;
 
 public class ItemFocusMRUFortification extends ItemFocusBasic{
@@ -175,4 +176,23 @@ public class ItemFocusMRUFortification extends ItemFocusBasic{
 	}
     
     public static final AspectList cost = new AspectList().add(Aspect.EARTH,200).add(Aspect.ORDER, 200).add(Aspect.ENTROPY, 50);
+
+	@Override
+	public int getFocusColor(ItemStack focusstack) {
+		// TODO Auto-generated method stub
+		return 0x939191;
+	}
+
+	@Override
+	public AspectList getVisCost(ItemStack focusstack) {
+		// TODO Auto-generated method stub
+		return cost;
+	}
+
+	@Override
+	public FocusUpgradeType[] getPossibleUpgradesByRank(ItemStack focusstack,
+			int rank) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

@@ -23,6 +23,7 @@ import net.minecraft.world.World;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
+import thaumcraft.api.wands.FocusUpgradeType;
 import thaumcraft.api.wands.ItemFocusBasic;
 
 public class ItemFocusMRUSanitiser extends ItemFocusBasic{
@@ -114,4 +115,23 @@ public class ItemFocusMRUSanitiser extends ItemFocusBasic{
     }
     
     public static final AspectList cost = new AspectList().add(Aspect.ORDER,2).add(Aspect.ENTROPY, 2);
+
+	@Override
+	public int getFocusColor(ItemStack focusstack) {
+		// TODO Auto-generated method stub
+		return 0xa5b3cd;
+	}
+
+	@Override
+	public AspectList getVisCost(ItemStack focusstack) {
+		// TODO Auto-generated method stub
+		return cost;
+	}
+
+	@Override
+	public FocusUpgradeType[] getPossibleUpgradesByRank(ItemStack focusstack,
+			int rank) {
+		// TODO Auto-generated method stub
+		return new FocusUpgradeType[]{FocusUpgradeType.potency};
+	}
 }

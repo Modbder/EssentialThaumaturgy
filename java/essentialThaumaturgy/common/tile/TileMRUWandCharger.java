@@ -64,7 +64,7 @@ public class TileMRUWandCharger extends TileHasMRUReqAspects{
 					int entropy = tg.getInteger("perditio");
 					int order = tg.getInteger("ordo");
 					
-					if(fire * 10 < aspectCap && this.getMRU() - 10 > 0)
+					if(fire * 2 < aspectCap && this.getMRU() - 10 > 0)
 					{
 						this.setMRU(this.getMRU()-10);
 						++fire;
@@ -72,7 +72,7 @@ public class TileMRUWandCharger extends TileHasMRUReqAspects{
 						return;
 					}
 					
-					if(water * 10 < aspectCap && this.getMRU() - 10 > 0)
+					if(water * 2 < aspectCap && this.getMRU() - 10 > 0)
 					{
 						this.setMRU(this.getMRU()-10);
 						++water;
@@ -80,7 +80,7 @@ public class TileMRUWandCharger extends TileHasMRUReqAspects{
 						return;
 					}
 					
-					if(earth * 10 < aspectCap && this.getMRU() - 10 > 0)
+					if(earth * 2 < aspectCap && this.getMRU() - 10 > 0)
 					{
 						this.setMRU(this.getMRU()-10);
 						++earth;
@@ -88,7 +88,7 @@ public class TileMRUWandCharger extends TileHasMRUReqAspects{
 						return;
 					}
 					
-					if(air * 10 < aspectCap && this.getMRU() - 10 > 0)
+					if(air * 2 < aspectCap && this.getMRU() - 10 > 0)
 					{
 						this.setMRU(this.getMRU()-10);
 						++air;
@@ -96,7 +96,7 @@ public class TileMRUWandCharger extends TileHasMRUReqAspects{
 						return;
 					}
 					
-					if(order * 10 < aspectCap && this.getMRU() - 10 > 0)
+					if(order * 2 < aspectCap && this.getMRU() - 10 > 0)
 					{
 						this.setMRU(this.getMRU()-10);
 						++order;
@@ -104,7 +104,7 @@ public class TileMRUWandCharger extends TileHasMRUReqAspects{
 						return;
 					}
 					
-					if(entropy * 10 < aspectCap && this.getMRU() - 10 > 0)
+					if(entropy * 2 < aspectCap && this.getMRU() - 10 > 0)
 					{
 						this.setMRU(this.getMRU()-10);
 						++entropy;
