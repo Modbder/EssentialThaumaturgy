@@ -124,3 +124,61 @@ tile.essenthaum.dimTranciever.name=MRU Dimensional Transceiver
 tile.essenthaum.crystalDestructor.name=MRU Crystal Destructor
 tile.essenthaum.wandCharger.name=MRU Wand Charger
 tile.essenthaum.generator.name=MRU Generator
+
+#1.1
+item.essenthaum.overchargedPearl.name=Overcharged Primordial Pearl
+item.essenthaum.mruLeftovers.name=Primordial MRU Leftovers
+item.essenthaum.primodialLeftovers.name=Primordial Pearl Leftovers
+item.essenthaum.pureParticle.name=Pure Particle
+item.essenthaum.shadeParticle.name=Shade Particle
+item.essenthaum.primordialCore.name=Primordial MRU Core
+item.essenthaum.inkwellmru.name=MRU Powered Scribing Tools
+
+tile.essenthaum.radiatedNode.name=Radiated Aura Node
+tile.essenthaum.nodeIrradiator.name=Aura Node Irradiator
+tile.essenthaum.mruSpreader.name=MRU Redistributor
+tile.essenthaum.fluxWiper.name=Flux Wiper
+tile.essenthaum.mrucuStabilizer.name=MRUCU Balancer
+tile.essenthaum.mrucuAbsorber.name=MRUCU Absorber
+
+
+tc.research_name.et.research.pearlDivsion=Primordial Pearl Division
+tc.research_text.et.research.pearlDivsion=Even further?
+tc.research_name.et.research.primordial=Primordial Pearl Leftovers
+tc.research_text.et.research.primordial=You've tried so hard
+tc.research_name.et.research.mruLeft=Primordial MRU Leftovers
+tc.research_text.et.research.mruLeft=And got so far
+tc.research_name.et.research.pureLeft=Pure Particle
+tc.research_text.et.research.pureLeft=But in the end
+tc.research_name.et.research.shadeLeft=Shade Particle
+tc.research_text.et.research.shadeLeft=It doesn't even matter...
+tc.research_name.et.research.nodeIrradiation=Aura Node Irradiation
+tc.research_text.et.research.nodeIrradiation=Throwing open the Windows!
+tc.research_name.et.research.mruSpreader=MRU Redistribution
+tc.research_text.et.research.mruSpreader=Restoring Ancient knowledge!
+tc.research_name.et.research.fluxWiper=Flux Wiper
+tc.research_text.et.research.fluxWiper=A bigger argument!
+tc.research_name.et.research.mrucuStabilizer=MRUCU Stabilization
+tc.research_text.et.research.mrucuStabilizer=The same way
+tc.research_name.et.research.mrucuAbsorber=MRUCU Absorption
+tc.research_text.et.research.mrucuAbsorber=Harnessing the power
+tc.research_name.et.research.inkwellmru=MRU Powered Ink Well
+tc.research_text.et.research.inkwellmru=Researching with MRU
+
+et.pearlDivsion.txt.0=Those pearls you've found in the dungeon open a huge window of possibilities! They seem to behave strangely in magic aspects, but what about MRU? You have discovered, that radiating the pearl with MRU in a crucible makes it very fragile and upon touch it splits into various aspects. And one of them is SHADE... 
+et.primordial.txt.0=Primordial pearl leftovers. You do not think, that they can be restored to their first form - the Primordial Form. Or can they? Maybe, if you manage to get enough of them it is possible, after all? You've stumbled upon a shocking discovery - Pale Pearls CAN mimic the Primordial Pearls, if they are infused with enough aspects and those leftovers...
+et.mruLeft.txt.0=Those MRU leftovers emanate with power, they seem to radiate everything around them. They seem to be somewhat of an endless power source, yet, the MRU they create behaves strange. It is not affected by MRU Fields, so it can't be controlled. An interesting thing - it interacts with Void Plates from Hoanna, making them glow with power and energy! It seems to be a huge discovery, because it gives you an access to Hoanna's past civilisations and their technology!
+et.pureLeft.txt.0=What is this?! This fell of from the centre of that primordial pearl. What is this particle? It is round, it glows with a bright green color, similar to emerald. You have not ever heard of something like this. No books, no people, even the Wind seems to be unaware of this thing. You hope, that it is a counterpart to the SHADE, but how can you know?<BR><LINE><BR>There are no obvious uses for this thing, but you highly doubt that it is useless. Better keep it safe, it may be your only saviour!
+et.shadeLeft.txt.0=So, here it is. A physical object, representing the SHADE itself. Here is an ultimate proof for all others that it exists, and it wants to destroy everything... Well, maybe it is only a proof of SHADE's existence, but it is just a matter of time. You are afraid to keep this thing anywhere in the material world, but no amounts of MRU or aspects are able to harm it, and you do not think, that just throwing this thing in lava is a good idea. The researches must be continued, the piece of SHADE must be left untouched. No matter how hard you want this thing to be destroyed. 
+et.shadeLeft.txt.1=Obviously, you do not want to even TRY to find uses for such a thing. It does not matter, how mad or not you are - this thing is too dangerous. What if it opens a portal to the SHADE from the outer world? You can't risk it!<BR><LINE><BR>Sleeping now only gives you nightmares and when you finally awake you no longer feel full of energy and refreshed. All your thoughts seem to be focused around this thing now. Maybe you are finally going mad?
+et.nodeIrradiation.txt.0=There always was a thought - what will happen if you radiate an Aura Node with MRU. Answer - nothing. Aura nodes seem to not react to MRU completely. However, since you've managed to "open a window", create an Energized Aura Node you've wanted to radiate it with MRU. And... It worked! Kinda. Radiating an Energized Aura Node with MRU did nothing, but it seemed, like MRU attacked some kind of a barrier. So, you needed a huge MRU ray to see, what happens. Unfortunately, you were never able to create a big enough MRU ray - if you make it too energy consuming it will just dissapear, and if you make it too small - nothing happens.
+et.nodeIrradiation.txt.1=Well, after getting some of those Primordial MRU Cores, you are sure, that this problem is solved. You've managed to create an experimental device, and all it needs is a little bit of testing! It needs to be placed next to an Energized Node, on the wall, so it faces the node. After that, you just need to supply it with LOTS of MRU, and, you are pretty sure, that LOTS means really A WHOLE LOT. Like, really. After that you just need to wait, for an uncertain amount of time, you are testing the device, how can you know how much to wait? It might be dangerous, so you might want to step back too.
+et.nodeIrradiation.txt.2=You are confident, that no matter what happens after that waiting, the device NEEDS to stay at the SAME POSITION, UNTOUCHED, and NEVER LEFT WITHOUT MRU. You are unsure about what will happen, if you violate any of those conditions, but you doubt that you want to know.
+et.mruSpreader.txt.0=After some researching on the way those MRU particles move you've stumbled upon a crazy discovery. What if you combine the properties of those particles to ignore MRU Fields, The ability of a bound gem to link anything, and some void material? The result shocks you - you were able to recreate one of Hoanna's technology!
+et.mruSpreader.txt.1=This device is able to automatically find devices, that require MRU in a range of 16 blocks and give MRU to them. It still needs a supply of MRU - but there is a slot for bound gem there. This device takes some time to re-initialize, however, so be sure to wait up to 30 seconds after placing any block that requires MRU in it's range. It is also uncapable of transfering MRU into MRUCU Enrichment Chamber, but you do not need to do so.
+et.fluxWiper.txt.0=After some researching you've found a very interesting feature - those MRU particles generated by Primordial Cores seem to annihilate flux! You have managed to build a machine, that rapidly removes flux in 16 block radius around it. It requires some MRU. The device completely destroys flux, it does not generate anything out of it, so no pipes needed. The device can be placed anywhere you want, even on the ceiling. It can destroy flux even through blocks.
+et.mrucuStabilizer.txt.0=Researches on that primordial pear leftovers allowed you to figure out a way to replicate the process of stabilizing aura nodes, but apply it to MRUCUs! This discovery allowed you to build a mechanism, that is capable of stabilizing nearest MRUCU. The device functions a little bit different:
+et.mrucuStabilizer.txt.1=First of all, it does not need to be placed directly under MRUCUs. It can be placed anywhere in a range of 8 blocks from your MRUCU.<BR>Second, it stabilizes MRUCUs at a cost of 10 MRU/tick and 1 Ordo aspect every second. Essentia can be pumped in from any direction but the front. The device can also automatically consume essentia from Jars it finds nearby. It is also possible to hook up a Vis Relay to it, however, Vis cost from relays is 5 times bigger, so it will need 5 Ordo Vis from relays, instead of 1 from jars.
+et.mrucuStabilizer.txt.2=The device, however, is uncapabe of fully stabilizing MRUCUs to an ideal balance of Pure, but, if left enabled for a long time can get really close to it. It is also worth pointing, that the device requires a constant redstone signal in order to function.
+et.mrucuAbsorber.txt.0=After researching those Primordial Pearl Leftovers you've discovered an interesting fact - they seem to absorb MRU from around them and transfer it to it's liquid essentia form. This seems useless... If we are not looking at a bigger project. You've managed to create a device, that can absorb MRU from the nearest MRUCU in a range of 8 blocks and transform it into MRU aspect with a ratio of 1000MRU = 1 aspect. The device requires a steady supply of MRU to work and a redstone signal. It will not function if it's internal storage of MRU aspect is full, and it can store as much as a regular Warded Jar can.
+et.inkwellmru.txt.0=It should be obvious - MRU particles can leave trails on paper, especially if properly harnessed. So, why not use MRU instead of precious ink in your research table? The tools however, can't be recharged directly in your research table. They can still be recharged in a Charging Chamber, and they will passively recharge while in your inventory if you have any kind of MRU storage on you.

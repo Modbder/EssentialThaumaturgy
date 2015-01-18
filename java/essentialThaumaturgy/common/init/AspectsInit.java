@@ -68,6 +68,8 @@ public class AspectsInit {
 		ThaumcraftApi.registerObjectTag(getIS("block:levitator",0), new AspectList().add(AIR, 12).add(FLIGHT, 8).add(RADIATION, 6).add(MECHANISM, 6).add(ELDRITCH, 6).add(VOID, 4).add(MRU, 0));
 		ThaumcraftApi.registerObjectTag(getIS("block:spreader",0), new AspectList().add(AIR, 12).add(FLIGHT, 8).add(RADIATION, 6).add(MECHANISM, 6).add(ELDRITCH, 6).add(VOID, 4).add(MRU, 0));
 		ThaumcraftApi.registerObjectTag(getIS("block:torch",0), new AspectList().add(LIGHT, 6).add(RADIATION, 1).add(MRU, 0));
+		
+		ThaumcraftApi.registerObjectTag(new ItemStack(BlocksInit.radiatedNode,1,0), new AspectList().add(MRU, 8).add(RADIATION, 8).add(MATRIX, 8).add(MAGIC, 8).add(TAINT, 8));
 
 		//=======================================================ITEMS============================================================//
 		ThaumcraftApi.registerObjectTag(getIS("item:mruMover1",0), new AspectList().add(MRU, 1).add(MOTION, 1).add(CRYSTAL, 1));
@@ -138,6 +140,11 @@ public class AspectsInit {
 		ThaumcraftApi.registerObjectTag(getIS("item:bottledWind",0), new AspectList().add(MRU, 2).add(AIR, 2).add(RADIATION, 0));
 		ThaumcraftApi.registerObjectTag(getIS("item:imprisonedWind",0), new AspectList().add(MRU, 2).add(AIR, 4).add(RADIATION, 0));
 		ThaumcraftApi.registerObjectTag(getIS("item:windKeeper",0), new AspectList().add(MRU, 2).add(AIR, 8).add(RADIATION, 0));
+		
+		ThaumcraftApi.registerObjectTag(new ItemStack(ItemsInit.pearl,1,1), new AspectList().add(MRU,8));
+		ThaumcraftApi.registerObjectTag(new ItemStack(ItemsInit.pearl,1,2), new AspectList().add(AIR,8).add(WATER, 8).add(EARTH, 8).add(FIRE, 8).add(ORDER, 8).add(ENTROPY,8));
+		ThaumcraftApi.registerObjectTag(new ItemStack(ItemsInit.pearl,1,3), new AspectList().add(ORDER,8).add(MAGIC, 8).add(TAINT, 8));
+		ThaumcraftApi.registerObjectTag(new ItemStack(ItemsInit.pearl,1,4), new AspectList().add(MRU,8).add(VOID, 8).add(DARKNESS, 8));
 	}
 	
 	public static Aspect

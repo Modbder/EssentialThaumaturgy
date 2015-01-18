@@ -4,12 +4,14 @@ import java.lang.reflect.Field;
 import java.util.List;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import essentialThaumaturgy.common.utils.ScanEventHandlerRadiatedNode;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.crafting.CrucibleRecipe;
 import thaumcraft.api.crafting.InfusionRecipe;
 import thaumcraft.api.crafting.ShapedArcaneRecipe;
+import thaumcraft.api.nodes.NodeModifier;
 import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchCategoryList;
 import thaumcraft.api.research.ResearchItem;
@@ -22,6 +24,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StatCollector;
+import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
@@ -30,8 +33,21 @@ public class ThaumonomiconInit {
 	
 	public static void init()
 	{
+		EnumHelper.addEnum(new Class[][]{{NodeModifier.class}},NodeModifier.class, "RADIATED", new Object[]{});
 		ItemStack matrixInteractor = new ItemStack(ItemsInit.matrixInteractor,1,0);
 		ItemStack infusedStone = new ItemStack(BlocksInit.infusedStone,1,0);
+		ItemStack pearl = new ItemStack(ItemsInit.pearl,1,0);
+		ItemStack pearlPrimodial = new ItemStack(ItemsInit.pearl,1,2);
+		ItemStack pearlMRU = new ItemStack(ItemsInit.pearl,1,1);
+		ItemStack corePrimordial = new ItemStack(ItemsInit.primordialCore,1,0);
+		ItemStack pearlPure = new ItemStack(ItemsInit.pearl,1,3);
+		ItemStack pearlShade = new ItemStack(ItemsInit.pearl,1,4);
+		ItemStack irradiator = new ItemStack(BlocksInit.nodeIrradiator,1,0);
+		ItemStack spreader = new ItemStack(BlocksInit.mruSpreader,1,0);
+		ItemStack wiper = new ItemStack(BlocksInit.fluxWiper,1,0);
+		ItemStack stabilizer = new ItemStack(BlocksInit.mrucuStabilizer,1,0);
+		ItemStack absorber = new ItemStack(BlocksInit.mrucuAbsorber,1,0);
+		ItemStack tools = new ItemStack(ItemsInit.mruScribingTools,1,0);
 		
 		OreDictionary.registerOre("gemChaos", new ItemStack(ItemsInit.chaosGem,1,0));
 		OreDictionary.registerOre("gemFrozen", new ItemStack(ItemsInit.frozenGem,1,0));
@@ -61,6 +77,7 @@ public class ThaumonomiconInit {
 		ThaumcraftApi.addCrucibleRecipe("et.research.mruVol1", OreDictionary.getOres("gemFrozen").get(0),getIS("item:drops",4), new AspectList().add(Aspect.COLD, 3).add(Aspect.ORDER, 2));
 		ThaumcraftApi.addCrucibleRecipe("et.research.matrix", matrixInteractor,new ItemStack(ItemsInit.inertInteractor,1,0), new AspectList().add(AspectsInit.MRU, 10).add(AspectsInit.MATRIX, 10));
 		ThaumcraftApi.addCrucibleRecipe("et.research.infusedStone", infusedStone,getIS("block:fortifiedStone",0), new AspectList().add(AspectsInit.MRU, 1).add(Aspect.MAGIC,1));
+		ThaumcraftApi.addCrucibleRecipe("et.research.pearlDivsion", pearl,getISTC("item:itemEldritchObject",3), new AspectList().add(AspectsInit.MRU, 32));
 		
 		ShapedArcaneRecipe rec = ThaumcraftApi.addArcaneCraftingRecipe("et.research.mruVol2", new ItemStack(ItemsInit.monocleOfRevealing,1,0), new AspectList().add(Aspect.ORDER, 25).add(Aspect.ENTROPY, 25).add(Aspect.FIRE, 10).add(Aspect.WATER, 10).add(Aspect.EARTH, 10).add(Aspect.AIR, 10), new Object[]{
 			"GM ",
@@ -68,6 +85,15 @@ public class ThaumonomiconInit {
 			"   ",
 			'G',getISTC("item:itemGoggles",OreDictionary.WILDCARD_VALUE),
 			'M',getIS("item:magicMonocle",OreDictionary.WILDCARD_VALUE)
+		});
+		
+		ShapedArcaneRecipe scribingToolsRec = ThaumcraftApi.addArcaneCraftingRecipe("et.research.inkwellmru", new ItemStack(ItemsInit.mruScribingTools,1,5000), new AspectList().add(Aspect.ORDER, 10).add(Aspect.ENTROPY, 10).add(Aspect.FIRE, 10).add(Aspect.WATER, 10).add(Aspect.EARTH, 10).add(Aspect.AIR, 10), new Object[]{
+			"TSI",
+			"   ",
+			"   ",
+			'T',getISTC("item:itemInkwell",OreDictionary.WILDCARD_VALUE),
+			'S',getIS("item:storage",1),
+			'I',getIS("item:genericItem",1)
 		});
 		
 		ShapedArcaneRecipe fociRec = ThaumcraftApi.addArcaneCraftingRecipe("et.research.mruVol2", new ItemStack(ItemsInit.foci_MRUMovement,1,0), new AspectList().add(Aspect.ORDER, 25).add(Aspect.ENTROPY, 25).add(Aspect.FIRE, 10).add(Aspect.WATER, 10).add(Aspect.EARTH, 10).add(Aspect.AIR, 10), new Object[]{
@@ -211,7 +237,25 @@ public class ThaumonomiconInit {
 				ThaumcraftApi.addInfusionCraftingRecipe("CAP_mru", new ItemStack(ItemsInit.mruCap), 8, new AspectList().add(AspectsInit.MRU, 64).add(AspectsInit.MATRIX, 32),new ItemStack(ItemsInit.cap_inert) , new ItemStack[]{getISTC("item:itemResource",14),getISTC("item:itemResource",14),getISTC("item:itemResource",14),getISTC("item:itemResource",14),getISTC("item:itemResource",14),getISTC("item:itemResource",14),getISTC("item:itemResource",14)});
 		InfusionRecipe iRec_shadeProtector = 
 				ThaumcraftApi.addInfusionCraftingRecipe("et.research.mruVol5", new ItemStack(ItemsInit.shade_protector), 8, new AspectList().add(AspectsInit.MATRIX, 64).add(Aspect.HEAL, 32).add(Aspect.LIFE, 32),getISTC("item:itemAmuletRunic",OreDictionary.WILDCARD_VALUE) , new ItemStack[]{getISTC("item:itemResource",14),getISTC("item:itemResource",14),getISTC("item:itemResource",14),getISTC("item:itemResource",14),getISTC("item:itemResource",14),getISTC("item:itemResource",14),getISTC("item:itemResource",14)});
+		InfusionRecipe iRec_primodialPearl = 
+				ThaumcraftApi.addInfusionCraftingRecipe("et.research.primordial", getISTC("item:itemEldritchObject",3), 2, new AspectList().add(Aspect.ELDRITCH, 16).add(AspectsInit.MRU,16),getIS("item:genericItem",38), new ItemStack[]{pearlPrimodial,pearlPrimodial,pearlPrimodial,pearlPrimodial,pearlPrimodial});
+		InfusionRecipe iRec_primordialCore = 
+				ThaumcraftApi.addInfusionCraftingRecipe("et.research.mruLeft", corePrimordial, 6, new AspectList().add(Aspect.VOID, 32).add(AspectsInit.MRU,32).add(Aspect.ARMOR,16),pearlMRU, new ItemStack[]{getIS("item:genericItem",35),getIS("item:genericItem",36),getIS("item:genericItem",35),getIS("item:genericItem",37),getIS("item:genericItem",35),getIS("item:genericItem",36),getIS("item:genericItem",35),getIS("item:genericItem",37)});
+		InfusionRecipe iRec_irradiator = 
+				ThaumcraftApi.addInfusionCraftingRecipe("et.research.nodeIrradiation", irradiator, 5, new AspectList().add(Aspect.ARMOR,64).add(Aspect.AURA,64).add(Aspect.MAGIC,64).add(Aspect.MOTION,64).add(Aspect.MECHANISM,64),getISTC("block:blockStoneDevice",10), new ItemStack[]{corePrimordial,getIS("block:rayTower",0),getISTC("item:itemThaumometer",0),getIS("block:rayTower",0),corePrimordial,getIS("block:rayTower",0),getIS("item:genericItem",44),getIS("block:rayTower",0)});
+		InfusionRecipe iRec_spreader = 
+				ThaumcraftApi.addInfusionCraftingRecipe("et.research.mruSpreader", spreader, 2, new AspectList().add(Aspect.AURA,16).add(Aspect.MAGIC,32).add(AspectsInit.RADIATION,64).add(AspectsInit.MATRIX,8),getIS("block:rayTower",0), new ItemStack[]{getIS("item:bound_gem",0),corePrimordial,getISTC("item:itemResource",15)});
+		InfusionRecipe iRec_wiper = 
+				ThaumcraftApi.addInfusionCraftingRecipe("et.research.fluxWiper", wiper, 1, new AspectList().add(Aspect.ORDER,16).add(Aspect.MAGIC,8).add(AspectsInit.MRU,8).add(AspectsInit.RADIATION,8),getISTC("block:blockStoneDevice",14), new ItemStack[]{getIS("item:genericItem",36),corePrimordial,getIS("item:genericItem",37)});
+		InfusionRecipe iRec_stabilizer = 
+				ThaumcraftApi.addInfusionCraftingRecipe("et.research.mrucuStabilizer", stabilizer, 6, new AspectList().add(Aspect.ORDER,64).add(Aspect.AURA,64).add(AspectsInit.MRU,64).add(AspectsInit.RADIATION,32).add(Aspect.MECHANISM,32),getISTC("block:blockStoneDevice",10), new ItemStack[]{pearlPrimodial,pearlPrimodial,pearlPrimodial,getIS("item:genericItem",37),getIS("item:genericItem",36),getIS("item:genericItem",35),getIS("item:genericItem",35)});
+		InfusionRecipe iRec_absorber = 
+				ThaumcraftApi.addInfusionCraftingRecipe("et.research.mrucuAbsorber", absorber, 6, new AspectList().add(Aspect.EXCHANGE,64).add(Aspect.AURA,64).add(AspectsInit.MRU,64).add(AspectsInit.RADIATION,32).add(Aspect.MECHANISM,16),getIS("block:enderGenerator",0), new ItemStack[]{pearlPrimodial,pearlPrimodial,getIS("item:genericItem",37),getIS("item:genericItem",36),getIS("item:genericItem",35),getIS("item:genericItem",35),getIS("item:bound_gem",0)});
 		
+		
+		
+		
+		//TODO Infusion
 		new ResearchItem("et.research.mruVol1", "et.category", new AspectList(), 0, 0, 0, new ResourceLocation("essenthaum","textures/misc/thaumonomiconIcon.png"))
 			.setAutoUnlock()
 			.setPages(
@@ -238,6 +282,14 @@ public class ThaumonomiconInit {
 				new ResearchPage(fociRec)
 			)
 			.registerResearchItem();
+		
+		new ResearchItem("et.research.inkwellmru", "et.category", new AspectList().add(AspectsInit.MRU, 3).add(Aspect.FLIGHT, 3).add(Aspect.MIND, 3), 1, -3, 1, tools)
+		.setParents("et.research.mruVol1")
+		.setPages(
+			new ResearchPage(StatCollector.translateToLocal("et.inkwellmru.txt.0")),
+			new ResearchPage(scribingToolsRec)
+		)
+		.registerResearchItem();
 		
 		new ResearchItem("et.research.matrix", "et.category", new AspectList().add(AspectsInit.MATRIX, 8).add(Aspect.MIND, 8), -2, -3, 3, new ResourceLocation("essenthaum","textures/aspects/matrix.png"))
 		.setAspectTriggers(AspectsInit.MATRIX)
@@ -456,6 +508,117 @@ public class ThaumonomiconInit {
 		.setConcealed()
 		.registerResearchItem();
 		
+		new ResearchItem("et.research.pearlDivsion", "et.category", new AspectList().add(AspectsInit.MRU, 5).add(Aspect.ELDRITCH, 5).add(Aspect.TAINT, 5).add(Aspect.MAGIC, 5), -17, -2,3, pearl)
+		.setParents("et.research.mruVol5","PRIMPEARL")
+		.setPages(
+			new ResearchPage(StatCollector.translateToLocal("et.pearlDivsion.txt.0")),
+			new ResearchPage(ThaumcraftApi.getCrucibleRecipe(pearl))
+			
+		)
+		.setSecondary()
+		.setSpecial()
+		.setConcealed()
+		.registerResearchItem();
+		
+		new ResearchItem("et.research.primordial", "et.category", new AspectList().add(AspectsInit.MRU, 5).add(Aspect.ELDRITCH, 5).add(Aspect.TAINT, 5).add(Aspect.MAGIC, 5).add(Aspect.EXCHANGE, 5), -19, -5,3, pearlPrimodial)
+		.setParents("et.research.pearlDivsion")
+		.setPages(
+			new ResearchPage(StatCollector.translateToLocal("et.primordial.txt.0")),
+			new ResearchPage(iRec_primodialPearl)
+			
+		)
+		.setSecondary()
+		.setConcealed()
+		.registerResearchItem();
+		
+		new ResearchItem("et.research.mruLeft", "et.category", new AspectList().add(AspectsInit.MRU, 5).add(Aspect.ELDRITCH, 5).add(Aspect.TAINT, 5).add(Aspect.MAGIC, 5).add(Aspect.VOID, 5), -20, -3,3, pearlMRU)
+		.setParents("et.research.pearlDivsion")
+		.setPages(
+			new ResearchPage(StatCollector.translateToLocal("et.mruLeft.txt.0")),
+			new ResearchPage(iRec_primordialCore)
+			
+		)
+		.setSecondary()
+		.setConcealed()
+		.registerResearchItem();
+		
+		new ResearchItem("et.research.pureLeft", "et.category", new AspectList().add(AspectsInit.MRU, 5).add(Aspect.ELDRITCH, 5).add(Aspect.TAINT, 5).add(Aspect.MAGIC, 5).add(Aspect.ORDER, 5), -20, -1,3, pearlPure)
+		.setParents("et.research.pearlDivsion")
+		.setPages(
+			new ResearchPage(StatCollector.translateToLocal("et.pureLeft.txt.0"))
+			
+		)
+		.setSecondary()
+		.setConcealed()
+		.registerResearchItem();
+		
+		
+		new ResearchItem("et.research.shadeLeft", "et.category", new AspectList().add(AspectsInit.MRU, 5).add(Aspect.ELDRITCH, 5).add(Aspect.TAINT, 5).add(Aspect.MAGIC, 5).add(Aspect.ENTROPY, 5), -19, 1,3, pearlShade)
+		.setParents("et.research.pearlDivsion")
+		.setPages(
+			new ResearchPage(StatCollector.translateToLocal("et.shadeLeft.txt.0")),
+			new ResearchPage(StatCollector.translateToLocal("et.shadeLeft.txt.1"))
+			
+		)
+		.setSecondary()
+		.setConcealed()
+		.registerResearchItem();
+		
+		new ResearchItem("et.research.nodeIrradiation", "et.category", new AspectList().add(AspectsInit.MRU, 5).add(Aspect.ARMOR, 5).add(Aspect.AURA, 5).add(Aspect.MAGIC, 5).add(Aspect.MECHANISM, 5), -22, -4,3, irradiator)
+		.setParents("et.research.mruLeft")
+		.setPages(
+			new ResearchPage(StatCollector.translateToLocal("et.nodeIrradiation.txt.0")),
+			new ResearchPage(StatCollector.translateToLocal("et.nodeIrradiation.txt.1")),
+			new ResearchPage(StatCollector.translateToLocal("et.nodeIrradiation.txt.2")),
+			new ResearchPage(iRec_irradiator)
+			
+		)
+		.setConcealed()
+		.registerResearchItem();
+		
+		new ResearchItem("et.research.mruSpreader", "et.category", new AspectList().add(AspectsInit.RADIATION, 5).add(Aspect.AIR, 5).add(Aspect.AURA, 5).add(Aspect.MAGIC, 5).add(Aspect.MECHANISM, 5), -22, -2,3, spreader)
+		.setParents("et.research.mruLeft")
+		.setPages(
+			new ResearchPage(StatCollector.translateToLocal("et.mruSpreader.txt.0")),
+			new ResearchPage(StatCollector.translateToLocal("et.mruSpreader.txt.1")),
+			new ResearchPage(iRec_spreader)
+			
+		)
+		.setConcealed()
+		.registerResearchItem();
+		
+		new ResearchItem("et.research.fluxWiper", "et.category", new AspectList().add(Aspect.ORDER, 5).add(Aspect.AIR, 5).add(Aspect.AURA, 5).add(Aspect.MAGIC, 5).add(Aspect.MECHANISM, 5), -23, -3,3, wiper)
+		.setParents("et.research.mruLeft")
+		.setPages(
+			new ResearchPage(StatCollector.translateToLocal("et.fluxWiper.txt.0")),
+			new ResearchPage(iRec_wiper)
+			
+		)
+		.setConcealed()
+		.registerResearchItem();
+		
+		new ResearchItem("et.research.mrucuStabilizer", "et.category", new AspectList().add(Aspect.ORDER, 5).add(Aspect.AURA, 5).add(AspectsInit.MRU, 5).add(AspectsInit.MATRIX, 5).add(Aspect.MECHANISM, 5), -21, -7,3, stabilizer)
+		.setParents("et.research.primordial")
+		.setPages(
+			new ResearchPage(StatCollector.translateToLocal("et.mrucuStabilizer.txt.0")),
+			new ResearchPage(StatCollector.translateToLocal("et.mrucuStabilizer.txt.1")),
+			new ResearchPage(StatCollector.translateToLocal("et.mrucuStabilizer.txt.2")),
+			new ResearchPage(iRec_stabilizer)
+			
+		)
+		.setConcealed()
+		.registerResearchItem();
+		
+		new ResearchItem("et.research.mrucuAbsorber", "et.category", new AspectList().add(Aspect.EXCHANGE, 5).add(Aspect.AURA, 5).add(AspectsInit.MRU, 5).add(AspectsInit.MATRIX, 5).add(Aspect.MECHANISM, 5), -17, -7,3, absorber)
+		.setParents("et.research.primordial")
+		.setPages(
+			new ResearchPage(StatCollector.translateToLocal("et.mrucuAbsorber.txt.0")),
+			new ResearchPage(iRec_absorber)
+			
+		)
+		.setConcealed()
+		.registerResearchItem();
+		
 		ThaumcraftApi.addWarpToResearch("et.research.foci_sanity", 1);
 		ThaumcraftApi.addWarpToResearch("et.research.foci_lifedrain", 3);
 		ThaumcraftApi.addWarpToResearch("et.research.auraSpoiler", 5);
@@ -463,6 +626,7 @@ public class ThaumonomiconInit {
 		ThaumcraftApi.addWarpToResearch("CAP_mru", 2);
 		ThaumcraftApi.addWarpToResearch("et.research.mruVol4", 6);
 		ThaumcraftApi.addWarpToResearch("et.research.mruVol5", 4);
+		ThaumcraftApi.addWarpToResearch("et.research.shadeLeft", 6);
 	}	
 	
 	public static ItemStack getISTC(String name, int meta)
@@ -495,7 +659,7 @@ public class ThaumonomiconInit {
 				Class searchClass = null;
 				if(type.toLowerCase().equals("block"))
 				{
-					searchClass = Class.forName("ethaumcraft.common.config.ConfigBlocks");
+					searchClass = Class.forName("thaumcraft.common.config.ConfigBlocks");
 				}
 				if(type.toLowerCase().equals("item"))
 				{

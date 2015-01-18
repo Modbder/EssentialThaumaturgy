@@ -146,7 +146,7 @@ public class TileHasMRUAndAspects extends TileHasMRU implements IAspectContainer
 
 	@Override
 	public boolean takeFromContainer(Aspect tag, int amount) {
-		if(this.aspects.getAmount(tag) > 0 && this.aspects.getAmount(tag)-amount > 0)
+		if(this.aspects.getAmount(tag) > 0 && this.aspects.getAmount(tag)-amount >= 0)
 		{
 			this.aspects.reduce(tag, amount);
 			return true;

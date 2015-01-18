@@ -11,7 +11,9 @@ import essentialThaumaturgy.common.item.ItemFocusMRULight;
 import essentialThaumaturgy.common.item.ItemFocusMRUMover;
 import essentialThaumaturgy.common.item.ItemFocusMRUSanitiser;
 import essentialThaumaturgy.common.item.ItemFocusMRUTeleportation;
+import essentialThaumaturgy.common.item.ItemMagicScribingTools;
 import essentialThaumaturgy.common.item.ItemMonocle;
+import essentialThaumaturgy.common.item.ItemPearl;
 import essentialThaumaturgy.common.item.ItemShadeProtector;
 import essentialThaumaturgy.common.utils.MRUWandOnUpdate;
 import net.minecraft.item.Item;
@@ -44,7 +46,10 @@ public class ItemsInit {
 	staffRod,
 	cap_inert,
 	mruCap,
-	shade_protector
+	shade_protector,
+	pearl,
+	primordialCore,
+	mruScribingTools
 	;
 	
 	
@@ -76,6 +81,9 @@ public class ItemsInit {
 		cap_inert = registerItemSimple(cap_inert,Item.class,"cap_inert","wand_cap_mru_inert",0,true,1);
 		mruCap = registerItemSimple(mruCap,Item.class,"mruCap","wand_cap_mru",0,true,1);
 		shade_protector = registerItemSimple(shade_protector,ItemShadeProtector.class,"shade_protector","shade_protector",0,false,1);
+		pearl = registerItemSimple(pearl,ItemPearl.class,"pearl","pearl",0,false,64);
+		primordialCore = registerItemSimple(primordialCore,Item.class,"primordialCore","primordialCore",0,false,64);
+		mruScribingTools = registerItemSimple(mruScribingTools,ItemMagicScribingTools.class,"inkwellmru","inkwellmru",5001,false,1);
 		
 		WandRod WAND_ROD_MRU = new WandRod("mru",100,new ItemStack(wandRod),10, new MRUWandOnUpdate(), new ResourceLocation("essenthaum","textures/misc/rod_mru.png"));
 		StaffRod STAFF_ROD_MRU = new StaffRod("mruStaff",100,new ItemStack(staffRod),10, new MRUWandOnUpdate(), new ResourceLocation("essenthaum","textures/misc/rod_mru.png"));
