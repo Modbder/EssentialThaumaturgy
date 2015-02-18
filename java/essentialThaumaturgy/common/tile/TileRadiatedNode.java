@@ -109,10 +109,8 @@ public class TileRadiatedNode extends TileVisNode implements IAspectContainer{
         }
 
         this.parentChanged();
-        this.worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
     	}catch(Exception e)
     	{
-    		e.printStackTrace();
     		return;
     	}
     }

@@ -113,7 +113,7 @@ public class TileFluxWiper extends TileHasMRU{
 			}
 		}else
 		{
-			if(!this.worldObj.isRemote)
+			if(!this.worldObj.isRemote && this.cleared != null)
 			{
 				Block b = this.worldObj.getBlock((int)cleared.x, (int)cleared.y, (int)cleared.z);
 				try

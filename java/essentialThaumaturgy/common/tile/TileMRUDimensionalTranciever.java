@@ -90,12 +90,10 @@ public class TileMRUDimensionalTranciever extends TileHasMRU{
 			IInventory inv = (IInventory) tile;
 			ITEHasMRU mrut = (ITEHasMRU) tile;
 			Class boungGemClass = Class.forName("ec3.common.item.ItemBoundGem");
-			if(inv.getStackInSlot(slotNum) != null && inv.getStackInSlot(slotNum).getItem().getClass() == boungGemClass && inv.getStackInSlot(slotNum).getTagCompound() != null)
+			if(inv.getStackInSlot(slotNum) != null && inv.getStackInSlot(slotNum).getTagCompound() != null)
 			{
 				ItemStack s = inv.getStackInSlot(slotNum);
-				
-				Method getCoords = boungGemClass.getMethod("getCoords", ItemStack.class);
-				int[] o = (int[]) getCoords.invoke(null, s);
+				int[] o = MiscUtils.getStackTag(s).getIntArray("pos");
 				if(true)
 				{
 					World wrldObj = 

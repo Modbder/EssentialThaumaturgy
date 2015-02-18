@@ -24,37 +24,37 @@ public class MRUWandOnUpdate implements IWandRodOnUpdate{
 			int air = tg.getInteger("aer");
 			int entropy = tg.getInteger("perditio");
 			int order = tg.getInteger("ordo");
-			if(fire < aspectCap && decreaseMRU(player,10))
+			if(fire < aspectCap && decreaseMRU(player,1))
 			{
 				++fire;
 				tg.setInteger("ignis", fire);
 			}
 			
-			if(water < aspectCap && decreaseMRU(player,10))
+			if(water < aspectCap && decreaseMRU(player,1))
 			{
 				++water;
 				tg.setInteger("aqua", water);
 			}
 			
-			if(earth < aspectCap && decreaseMRU(player,10))
+			if(earth < aspectCap && decreaseMRU(player,1))
 			{
 				++earth;
 				tg.setInteger("terra", earth);
 			}
 			
-			if(air < aspectCap && decreaseMRU(player,10))
+			if(air < aspectCap && decreaseMRU(player,1))
 			{
 				++air;
 				tg.setInteger("aer", air);
 			}
 			
-			if(order < aspectCap && decreaseMRU(player,10))
+			if(order < aspectCap && decreaseMRU(player,1))
 			{
 				++order;
 				tg.setInteger("ordo", order);
 			}
 			
-			if(entropy < aspectCap && decreaseMRU(player,10))
+			if(entropy < aspectCap && decreaseMRU(player,1))
 			{
 				++entropy;
 				tg.setInteger("perditio", entropy);

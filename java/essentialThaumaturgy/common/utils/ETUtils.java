@@ -111,7 +111,7 @@ public class ETUtils {
 		etTickets.clear();
 		}catch(Exception e)
 		{
-			e.printStackTrace();return;
+			return;
 		}
 	}
 	
@@ -206,7 +206,6 @@ public class ETUtils {
 	        	return false;
 		}catch(Exception e)
 		{
-			e.printStackTrace();
 			return false;
 		}
 	}	

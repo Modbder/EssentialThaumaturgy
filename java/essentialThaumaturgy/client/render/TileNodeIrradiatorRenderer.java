@@ -462,7 +462,7 @@ public class TileNodeIrradiatorRenderer extends TileEntitySpecialRenderer
 	        GL11.glRotatef((float)(-Math.atan2((double)f7, (double)f5)) * 180.0F / (float)Math.PI - 90.0F, 1.0F, 0.0F, 0.0F);
 	        Tessellator tessellator = Tessellator.instance;
 	        RenderHelper.disableStandardItemLighting();
-	        MiscUtils.bindTexture("essentialcraft","textures/special/mru_beam.png");
+	        MiscUtils.bindTexture("essentialcraft","textures/special/whitebox.png");
 	        GL11.glShadeModel(GL11.GL_SMOOTH);
 	        GL11.glEnable(GL11.GL_BLEND);
 	        float f9 = 1;

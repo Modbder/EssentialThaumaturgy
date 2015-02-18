@@ -76,18 +76,20 @@ public class TileHasMRU extends TileEntity implements ITERequiresMRU, IInventory
 		IInventory inv = this;
 		int slotNum = 0;
 		TileEntity tile = this;
-		Class boungGemClass = Class.forName("ec3.common.item.ItemBoundGem");
-		if(inv.getSizeInventory() > 0 && inv.getStackInSlot(slotNum) != null && inv.getStackInSlot(slotNum).getItem().getClass() == boungGemClass && inv.getStackInSlot(slotNum).getTagCompound() != null)
+		if(inv.getSizeInventory() > 0 && inv.getStackInSlot(slotNum) != null && inv.getStackInSlot(slotNum).getTagCompound() != null)
 		{
 			ItemStack s = inv.getStackInSlot(slotNum);
 			int[] o = getCoords(s);
-			if(MathUtils.getDifference(tile.xCoord, o[0]) <= 16 && MathUtils.getDifference(tile.yCoord, o[1]) <= 16 && MathUtils.getDifference(tile.zCoord, o[2]) <= 16)
+			if(o.length >= 3)
 			{
-    			if(tile.getWorldObj().getTileEntity(o[0], o[1], o[2]) != null && tile.getWorldObj().getTileEntity(o[0], o[1], o[2]) instanceof ITEHasMRU)
-    			{
-    				this.setBalance(((ITEHasMRU) tile.getWorldObj().getTileEntity(o[0], o[1], o[2])).getBalance());
-    			}
-    		}
+				if(MathUtils.getDifference(tile.xCoord, o[0]) <= 16 && MathUtils.getDifference(tile.yCoord, o[1]) <= 16 && MathUtils.getDifference(tile.zCoord, o[2]) <= 16)
+				{
+	    			if(tile.getWorldObj().getTileEntity(o[0], o[1], o[2]) != null && tile.getWorldObj().getTileEntity(o[0], o[1], o[2]) instanceof ITEHasMRU)
+	    			{
+	    				this.setBalance(((ITEHasMRU) tile.getWorldObj().getTileEntity(o[0], o[1], o[2])).getBalance());
+	    			}
+	    		}
+			}
 		}
 		if(inv.getSizeInventory() > 0)
 		{
